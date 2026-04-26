@@ -8,5 +8,6 @@ let vm = Vue.createApp({
                 { name: 'Amy', age: 33 }
             ]
         }
-    }
+    },
+   
 }).mount('#app');
