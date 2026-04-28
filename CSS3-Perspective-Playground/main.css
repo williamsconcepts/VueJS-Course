@@ -52,16 +52,16 @@ section.settings {
 }
 .box-container {
   padding: 50px;
-  border: 1px solid #8d81f3;
+  border: 1px solid #f1f381;
 }
 .box {
   width: 150px;
   height: 150px;
-  background: #8d81f3;
+  background: #4dd63b;
 }
 
 button {
-  background-color: #8d81f3;
+  background-color: #4dd63b;
   color: #fff;
   display: inline-block;
   font-size: 20px;
@@ -69,6 +69,17 @@ button {
   outline: none;
   border: none;
   margin-right: 10px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button.animate {
+  animation: buttonEffect 0.3s ease;
+}
+
+@keyframes buttonEffect {
+  0% { transform: scale(1); background-color: #4dd63b; }
+  50% { transform: scale(1.1); background-color: #ff6b6b; }
+  100% { transform: scale(1); background-color: #4dd63b; }
 }
 
 label{

@@ -4,7 +4,9 @@ Vue.createApp({
             perspective: 100,
             rotateX: 0,
             rotateY: 0,
-            rotateZ: 0
+            rotateZ: 0,
+            resetAnimating: false,
+            copyAnimating: false
         }
     },
     computed: {
@@ -23,12 +25,15 @@ Vue.createApp({
             this.rotateX = 0
             this.rotateY = 0
             this.rotateZ = 0
+            this.resetAnimating = true
+            setTimeout(() => this.resetAnimating = false, 300)
         },
        async copy() {
             let text = `transform:${this.box.transform};`
             await navigator.clipboard.writeText(text)
-
-            alert("Css copied to clipboard")
+            this.copyAnimating = true
+            setTimeout(() => this.copyAnimating = false, 300)
+            alert("CSS copied to clipboard")
         }
     }
 
